@@ -12,10 +12,10 @@ Creación del proyecto:
 ## Definición de rutas:
 
 Crea las siguientes rutas para la API:
-- `POST /tasks`: Crea una nueva tarea.
+- `POST /tasks`: Crea una nueva tarea y retorna como respuesta el objeto de la tarea creada.
 - `GET /tasks`: Obtiene la lista de todas las tareas.
 - `GET /tasks/:id`: Obtiene una tarea específica por su ID.
-- `PUT /tasks/:id`: Actualiza una tarea existente.
+- `PUT /tasks/:id`: Actualiza una tarea existente y retorna como respuesta el objeto de la tarea actualizada.
 - `DELETE /tasks/:id`: Elimina una tarea existente.
 
 
