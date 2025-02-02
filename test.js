@@ -2,7 +2,7 @@ const request = require("supertest");
 const {app} = require("./app.js");
 
 
-describe("GET /", () => {beforeAll(() => {
+describe("Pruebas de API Express", () => {beforeAll(() => {
     jest.setTimeout(10000);
 });
   it('debería crear una nueva tarea', async () => {

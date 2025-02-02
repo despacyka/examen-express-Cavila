@@ -1,0 +1,98 @@
+FAIL ./test.js
+  Pruebas de API Express
+    × Test results saved to test-results.txt
+    × debería obtener todas las tareas (6 ms)
+    × debería obtener una tarea por ID (11 ms)
+    × debería actualizar una tarea existente (10 ms)
+    × debería eliminar una tarea existente (9 ms)
+
+  ● Pruebas de API Express › debería crear una nueva tarea
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 201
+    Received: 404
+
+      17 |       .send(nuevaTarea);
+      18 |
+    > 19 |     expect(respuesta.statusCode).toBe(201);
+         |                                  ^
+      20 |     expect(respuesta.body.title).toBe(nuevaTarea.title);
+      21 |     expect(respuesta.body.description).toBe(nuevaTarea.description);
+      22 |     expect(respuesta.body.completed).toBe(nuevaTarea.completed);
+
+      at Object.toBe (test.js:19:34)
+
+  ● Pruebas de API Express › debería obtener todas las tareas
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      28 |       .get('/tasks');
+      29 |
+    > 30 |     expect(respuesta.statusCode).toBe(200);
+         |                                  ^
+      31 |     expect(Array.isArray(respuesta.body)).toBe(true);
+      32 |   });
+      33 |
+
+      at Object.toBe (test.js:30:34)
+
+  ● Pruebas de API Express › debería obtener una tarea por ID
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      46 |       .get(`/tasks/${crearRespuesta.body.id}`);
+      47 |
+    > 48 |     expect(respuesta.statusCode).toBe(200);
+         |                                  ^
+      49 |     expect(respuesta.body.id).toBe(crearRespuesta.body.id);
+      50 |   });
+      51 |
+
+      at Object.toBe (test.js:48:34)
+
+  ● Pruebas de API Express › debería actualizar una tarea existente
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      71 |       .send(tareaActualizada);
+      72 |
+    > 73 |     expect(respuesta.statusCode).toBe(200);
+         |                                  ^
+      74 |     expect(respuesta.body.title).toBe(tareaActualizada.title);
+      75 |     expect(respuesta.body.description).toBe(tareaActualizada.description);
+      76 |     expect(respuesta.body.completed).toBe(tareaActualizada.completed);
+
+      at Object.toBe (test.js:73:34)
+
+  ● Pruebas de API Express › debería eliminar una tarea existente
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      91 |       .delete(`/tasks/${crearRespuesta.body.id}`);
+      92 |
+    > 93 |     expect(respuesta.statusCode).toBe(200);
+         |                                  ^
+      94 |
+      95 |     // Intenta obtener la tarea eliminada y verifica que no exista
+      96 |     const obtenerRespuesta = await request(app)
+
+      at Object.toBe (test.js:93:34)
+
+Test Suites: 1 failed, 1 total
+Tests:       5 failed, 5 total
+Snapshots:   0 total
+Time:        0.816 s, estimated 1 s
+Ran all test suites.
