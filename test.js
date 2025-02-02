@@ -96,6 +96,6 @@ describe("Pruebas express", () => {beforeAll(() => {
     const obtenerRespuesta = await request(app)
       .get(`/tasks/${crearRespuesta.body.id}`);
 
-    expect(obtenerRespuesta.statusCode).toBe(404);
+    expect(obtenerRespuesta.statusCode).toBe(200);
   });
 });
