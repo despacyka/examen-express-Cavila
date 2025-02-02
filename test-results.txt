@@ -3,9 +3,9 @@ FAIL ./test.js
     × POST /tTest results saved to test-results.txt
  ms)
     × GET /tasks debería obtener todas las tareas (8 ms)
-    × GET /tasks/:id debería obtener una tarea por ID (12 ms)
+    × GET /tasks/:id debería obtener una tarea por ID (10 ms)
     × PUT /tasks/:id debería actualizar una tarea existente (11 ms)
-    × DELETE /tasks/:id debería eliminar una tarea existente (10 ms)
+    × DELETE /tasks/:id debería eliminar una tarea existente (11 ms)
 
   ● Pruebas express › POST /tasks debería crear una nueva tarea
 
@@ -95,5 +95,5 @@ FAIL ./test.js
 Test Suites: 1 failed, 1 total
 Tests:       5 failed, 5 total
 Snapshots:   0 total
-Time:        1.103 s
+Time:        1.086 s
 Ran all test suites.
