@@ -1,12 +1,13 @@
 FAIL ./test.js
-  Pruebas de API Express
-    × Test results saved to test-results.txt
-    × debería obtener todas las tareas (6 ms)
-    × debería obtener una tarea por ID (11 ms)
-    × debería actualizar una tarea existente (10 ms)
-    × debería eliminar una tarea existente (9 ms)
+  Pruebas express
+    × POST /tTest results saved to test-results.txt
+ ms)
+    × GET /tasks debería obtener todas las tareas (6 ms)
+    × GET /tasks/:id debería obtener una tarea por ID (9 ms)
+    × PUT /tasks/:id debería actualizar una tarea existente (11 ms)
+    × DELETE /tasks/:id debería eliminar una tarea existente (10 ms)
 
-  ● Pruebas de API Express › debería crear una nueva tarea
+  ● Pruebas express › POST /tasks debería crear una nueva tarea
 
     expect(received).toBe(expected) // Object.is equality
 
@@ -23,7 +24,7 @@ FAIL ./test.js
 
       at Object.toBe (test.js:19:34)
 
-  ● Pruebas de API Express › debería obtener todas las tareas
+  ● Pruebas express › GET /tasks debería obtener todas las tareas
 
     expect(received).toBe(expected) // Object.is equality
 
@@ -40,7 +41,7 @@ FAIL ./test.js
 
       at Object.toBe (test.js:30:34)
 
-  ● Pruebas de API Express › debería obtener una tarea por ID
+  ● Pruebas express › GET /tasks/:id debería obtener una tarea por ID
 
     expect(received).toBe(expected) // Object.is equality
 
@@ -57,7 +58,7 @@ FAIL ./test.js
 
       at Object.toBe (test.js:48:34)
 
-  ● Pruebas de API Express › debería actualizar una tarea existente
+  ● Pruebas express › PUT /tasks/:id debería actualizar una tarea existente
 
     expect(received).toBe(expected) // Object.is equality
 
@@ -74,7 +75,7 @@ FAIL ./test.js
 
       at Object.toBe (test.js:73:34)
 
-  ● Pruebas de API Express › debería eliminar una tarea existente
+  ● Pruebas express › DELETE /tasks/:id debería eliminar una tarea existente
 
     expect(received).toBe(expected) // Object.is equality
 
@@ -94,5 +95,5 @@ FAIL ./test.js
 Test Suites: 1 failed, 1 total
 Tests:       5 failed, 5 total
 Snapshots:   0 total
-Time:        0.816 s, estimated 1 s
+Time:        0.842 s, estimated 2 s
 Ran all test suites.

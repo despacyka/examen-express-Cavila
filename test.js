@@ -2,10 +2,10 @@ const request = require("supertest");
 const {app} = require("./app.js");
 
 
-describe("Pruebas de API Express", () => {beforeAll(() => {
+describe("Pruebas express", () => {beforeAll(() => {
     jest.setTimeout(10000);
 });
-  it('debería crear una nueva tarea', async () => {
+  it('POST /tasks debería crear una nueva tarea', async () => {
     const nuevaTarea = {
       title: 'Completar informe',
       description: 'Redactar y enviar el informe mensual',
@@ -23,7 +23,7 @@ describe("Pruebas de API Express", () => {beforeAll(() => {
     expect(respuesta.body.id).toBeDefined();
   });
 
-  it('debería obtener todas las tareas', async () => {
+  it('GET /tasks debería obtener todas las tareas', async () => {
     const respuesta = await request(app)
       .get('/tasks');
 
@@ -31,7 +31,7 @@ describe("Pruebas de API Express", () => {beforeAll(() => {
     expect(Array.isArray(respuesta.body)).toBe(true);
   });
 
-  it('debería obtener una tarea por ID', async () => {
+  it('GET /tasks/:id debería obtener una tarea por ID', async () => {
     // Primero, crea una tarea para obtener su ID
     const nuevaTarea = {
       title: 'Tarea de prueba',
@@ -49,7 +49,7 @@ describe("Pruebas de API Express", () => {beforeAll(() => {
     expect(respuesta.body.id).toBe(crearRespuesta.body.id);
   });
 
-  it('debería actualizar una tarea existente', async () => {
+  it('PUT /tasks/:id debería actualizar una tarea existente', async () => {
     // Primero, crea una tarea para obtener su ID
     const nuevaTarea = {
       title: 'Tarea antigua',
@@ -76,7 +76,7 @@ describe("Pruebas de API Express", () => {beforeAll(() => {
     expect(respuesta.body.completed).toBe(tareaActualizada.completed);
   });
 
-  it('debería eliminar una tarea existente', async () => {
+  it('DELETE /tasks/:id debería eliminar una tarea existente', async () => {
     // Primero, crea una tarea para obtener su ID
     const nuevaTarea = {
       title: 'Tarea a eliminar',
