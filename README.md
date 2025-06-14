@@ -61,3 +61,11 @@ Implementa la lógica necesaria en cada ruta para crear, leer, actualizar y elim
 - Documentación: Se valorará la inclusión de comentarios en el código y la creación de un breve documento explicando el funcionamiento de la API.
 
 - Recuerda usar buenas prácticas de programación, como la separación de responsabilidades y el uso de nombres descriptivos para las variables y funciones.
+
+## Pruebas unitarias
+
+-  POST /tasks debe crear una nueva tarea
+- GET /tasks debe obtener todas las tareas
+- GET /tasks/:id debe obtener una tarea por ID
+- PUT /tasks/:id debe actualizar una tarea existente
+- DELETE /tasks/:id debe eliminar una tarea existente
