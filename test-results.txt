@@ -1,99 +1,46 @@
 FAIL ./test.js
-  Pruebas express
-    × POST /tTest results saved to test-results.txt
- ms)
-    × GET /tasks debería obtener todas las tareas (8 ms)
-    × GET /tasks/:id debería obtener una tarea por ID (10 ms)
-    × PUT /tasks/:id debería actualizar una tarea existente (11 ms)
-    × DELETE /tasks/:id debería eliminar una tarea existente (11 ms)
+  ● Test suite failed to run
 
-  ● Pruebas express › POST /tasks debería crear una nueva tarea
+    Jest encountered an unexpected token
 
-    expect(received).toBe(expected) // Object.is equality
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
 
-    Expected: 201
-    Received: 404
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
 
-      17 |       .send(nuevaTarea);
-      18 |
-    > 19 |     expect(respuesta.statusCode).toBe(201);
-         |                                  ^
-      20 |     expect(respuesta.body.title).toBe(nuevaTarea.title);
-      21 |     expect(respuesta.body.description).toBe(nuevaTarea.description);
-      22 |     expect(respuesta.body.completed).toBe(nuevaTarea.completed);
+    By default "node_modules" folder is ignored by transformers.
 
-      at Object.toBe (test.js:19:34)
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
 
-  ● Pruebas express › GET /tasks debería obtener todas las tareas
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
 
-    expect(received).toBe(expected) // Object.is equality
+    Details:
 
-    Expected: 200
-    Received: 404
+    /home/runner/workspace/app.js:1
+    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,jest){import Express from "express";
+                                                                                      ^^^^^^
 
-      28 |       .get('/tasks');
-      29 |
-    > 30 |     expect(respuesta.statusCode).toBe(200);
-         |                                  ^
-      31 |     expect(Array.isArray(respuesta.body)).toBe(true);
-      32 |   });
-      33 |
+    SyntaxError: Cannot use import statement outside a module
 
-      at Object.toBe (test.js:30:34)
+      1 | const request = require("supertest");
+    > 2 | const { app } = require("./app.js");
+        |                 ^
+      3 |
+      4 | describe("Pruebas express", () => {
+      5 |   beforeAll(() => {
 
-  ● Pruebas express › GET /tasks/:id debería obtener una tarea por ID
-
-    expect(received).toBe(expected) // Object.is equality
-
-    Expected: 200
-    Received: 404
-
-      46 |       .get(`/tasks/${crearRespuesta.body.id}`);
-      47 |
-    > 48 |     expect(respuesta.statusCode).toBe(200);
-         |                                  ^
-      49 |     expect(respuesta.body.id).toBe(crearRespuesta.body.id);
-      50 |   });
-      51 |
-
-      at Object.toBe (test.js:48:34)
-
-  ● Pruebas express › PUT /tasks/:id debería actualizar una tarea existente
-
-    expect(received).toBe(expected) // Object.is equality
-
-    Expected: 200
-    Received: 404
-
-      71 |       .send(tareaActualizada);
-      72 |
-    > 73 |     expect(respuesta.statusCode).toBe(200);
-         |                                  ^
-      74 |     expect(respuesta.body.title).toBe(tareaActualizada.title);
-      75 |     expect(respuesta.body.description).toBe(tareaActualizada.description);
-      76 |     expect(respuesta.body.completed).toBe(tareaActualizada.completed);
-
-      at Object.toBe (test.js:73:34)
-
-  ● Pruebas express › DELETE /tasks/:id debería eliminar una tarea existente
-
-    expect(received).toBe(expected) // Object.is equality
-
-    Expected: 200
-    Received: 404
-
-      91 |       .delete(`/tasks/${crearRespuesta.body.id}`);
-      92 |
-    > 93 |     expect(respuesta.statusCode).toBe(200);
-         |                                  ^
-      94 |
-      95 |     // Intenta obtener la tarea eliminada y verifica que no exista
-      96 |     const obtenerRespuesta = await request(app)
-
-      at Object.toBe (test.js:93:34)
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1505:14)
+      at Object.require (test.js:2:17)
 
 Test Suites: 1 failed, 1 total
-Tests:       5 failed, 5 total
+Tests:       0 total
 Snapshots:   0 total
-Time:        1.086 s
+Time:        0.405 s
 Ran all test suites.
