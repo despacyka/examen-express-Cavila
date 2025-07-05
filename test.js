@@ -90,6 +90,6 @@ describe("Pruebas express", () => {
       `/tasks/${crearRespuesta.body.id}`,
     );
 
-    expect(obtenerRespuesta.statusCode).toBe(200);
+    expect(obtenerRespuesta.statusCode).toBe(404);
   });
 });
