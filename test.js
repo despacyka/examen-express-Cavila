@@ -11,9 +11,6 @@ import {
 } from "@jest/globals"; // <-- Añade esta línea
 
 describe("Pruebas express", () => {
-  beforeAll(() => {
-    jest.setTimeout(10000);
-  });
   it("POST /tasks debe crear una nueva tarea", async () => {
     const nuevaTarea = {
       title: "Completar informe",
