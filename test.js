@@ -1,6 +1,15 @@
 import request from "supertest";
 import { app } from "./app.js";
 
+// Importa las funciones globales de Jest explícitamente
+import {
+  describe,
+  it,
+  expect,
+  beforeAll,
+  jest,
+} from "@jest/globals"; // <-- Añade esta línea
+
 describe("Pruebas express", () => {
   beforeAll(() => {
     jest.setTimeout(10000);
